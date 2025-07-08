@@ -106,12 +106,12 @@ export const Contact = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                variant="glow" 
-                size="lg" 
-                className="w-full hoverable"
-              >
+            <Button 
+              type="submit" 
+              variant="minimal" 
+              size="lg" 
+              className="w-full hoverable"
+            >
                 <Send className="w-5 h-5" />
                 Send Message
               </Button>

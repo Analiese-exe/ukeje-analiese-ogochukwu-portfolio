@@ -33,88 +33,48 @@ const testimonials = [
 ];
 
 export const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const leftTestimonials = testimonials.slice(0, 2);
+  const rightTestimonials = testimonials.slice(2, 4);
 
   return (
     <section className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            What People <span className="gradient-text">Say</span>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+            What People Say
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-4"></div>
-          <p className="text-muted-foreground text-lg">
-            Feedback from colleagues and clients I've worked with
-          </p>
+          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="relative overflow-hidden">
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-full flex-shrink-0 px-4">
-                <div className="glass p-8 rounded-2xl text-center max-w-2xl mx-auto">
-                  {/* Quote icon */}
-                  <Quote className="w-12 h-12 text-primary mx-auto mb-6 opacity-50" />
-                  
-                  {/* Quote text */}
-                  <blockquote className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 italic">
+        <div className="grid md:grid-cols-2 gap-8 h-96 fade-in">
+          {/* Left column - scrolling up */}
+          <div className="marquee-fade overflow-hidden">
+            <div className="vertical-marquee-up space-y-6">
+              {[...leftTestimonials, ...leftTestimonials].map((testimonial, index) => (
+                <div key={index} className="bg-white/5 p-6 rounded-xl">
+                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
                     "{testimonial.quote}"
                   </blockquote>
-
-                  {/* Stars */}
-                  <div className="flex justify-center gap-1 mb-6">
-                    {[...Array(testimonial.rating)].map((_, starIndex) => (
-                      <Star 
-                        key={starIndex} 
-                        className="w-5 h-5 text-primary fill-current animate-pulse" 
-                        style={{ animationDelay: `${starIndex * 100}ms` }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Author */}
-                  <div className="flex items-center justify-center gap-4">
-                    <div className="w-12 h-12 glass rounded-full flex items-center justify-center font-bold text-primary">
-                      {testimonial.avatar}
-                    </div>
-                    <div className="text-left">
-                      <h4 className="font-semibold text-foreground">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="text-white font-medium">{testimonial.name}</div>
+                  <div className="text-white/60 text-sm">{testimonial.role}</div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 hoverable ${
-                  index === currentIndex 
-                    ? 'bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.5)]' 
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-              />
-            ))}
+          {/* Right column - scrolling down */}
+          <div className="marquee-fade overflow-hidden">
+            <div className="vertical-marquee-down space-y-6">
+              {[...rightTestimonials, ...rightTestimonials].map((testimonial, index) => (
+                <div key={index} className="bg-white/5 p-6 rounded-xl">
+                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div className="text-white font-medium">{testimonial.name}</div>
+                  <div className="text-white/60 text-sm">{testimonial.role}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

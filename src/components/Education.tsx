@@ -21,11 +21,11 @@ export const Education = () => {
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            My <span className="gradient-text">Education</span>
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+            My Education
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mx-auto"></div>
+          <div className="w-16 h-1 bg-white rounded-full mx-auto"></div>
         </div>
 
         <div className="relative">

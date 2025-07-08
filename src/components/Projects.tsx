@@ -42,74 +42,36 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section className="py-20 px-6 bg-card/20">
+    <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Featured <span className="gradient-text">Projects</span>
+        <div className="text-center mb-16 fade-in">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+            Featured Projects
           </h2>
-          <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-4"></div>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A showcase of my design work across various industries and platforms
-          </p>
+          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 fade-in">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="glass rounded-2xl overflow-hidden group hover:border-primary/50 hover:scale-105 transition-all duration-300 hoverable"
+              className="group hover:scale-105 transition-all duration-300 hoverable"
             >
-              {/* Project image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-6xl relative overflow-hidden">
+              {/* Project image */}
+              <div className="h-64 bg-white/5 rounded-2xl flex items-center justify-center text-6xl relative overflow-hidden mb-4 minimal-card">
                 <span className="relative z-10">{project.image}</span>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
 
-              {/* Project content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Project actions */}
-                <div className="flex gap-3">
-                  <Button variant="glass" size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4" />
-                    View Case Study
-                  </Button>
-                </div>
-              </div>
-
-              {/* Hover indicator */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-8 h-8 glass rounded-full flex items-center justify-center">
-                  <ArrowRight className="w-4 h-4 text-primary" />
-                </div>
-              </div>
+              {/* Project title */}
+              <h3 className="text-xl font-semibold text-white text-center">
+                {project.title}
+              </h3>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button variant="glow" size="lg" className="hoverable">
+        <div className="text-center mt-16 fade-in">
+          <Button variant="minimal" size="lg" className="hoverable">
             View All Projects
             <ArrowRight className="w-5 h-5" />
           </Button>
