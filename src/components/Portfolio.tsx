@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -8,10 +9,6 @@ const projects = [
   {
     title: "Career Genius",
     image: "🧠",
-  },
-  {
-    title: "Unified Data Vault",
-    image: "🔐",
   },
   {
     title: "AI Law Chatbot",
@@ -29,27 +26,31 @@ export const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="card-modern h-64 rounded-xl flex items-center justify-center text-6xl mb-4 cursor-pointer">
-                <span>{project.image}</span>
+        <div className="flex justify-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="card-modern h-80 rounded-xl flex items-center justify-center text-8xl mb-4 cursor-pointer">
+                  <span>{project.image}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-white text-center">
+                  {project.title}
+                </h3>
               </div>
-              <h3 className="text-xl font-semibold text-white text-center">
-                {project.title}
-              </h3>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="text-center fade-in">
-          <Button className="btn-outline px-8 py-3 rounded-lg font-medium">
-            View All Projects
-          </Button>
+          <Link to="/projects">
+            <Button className="btn-outline px-8 py-3 rounded-lg font-medium">
+              View All Projects
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -16,14 +16,11 @@ export const About = () => {
             
             <div className="space-y-6 text-lg text-white/70 leading-relaxed">
               <p>
-                I am a Professional UI/UX Designer. I specialize in creating intuitive user 
-                interfaces and seamless experiences for web and mobile applications.
+                I'm Analiese, a UX/UI Designer focused on creating intuitive, inclusive digital experiences. I design clean, accessible interfaces for web and mobile — with special care for neurodiverse users and underrepresented groups.
               </p>
               
               <p>
-                My passion lies in understanding user needs and translating them into 
-                <span className="text-white font-medium"> beautiful, accessible, and functional designs</span> 
-                {" "}that make a real difference in people's lives.
+                From study tools to data dashboards, I combine usability, clarity, and visual simplicity to make digital products that feel good to use. I care about design that works — for everyone.
               </p>
             </div>
 

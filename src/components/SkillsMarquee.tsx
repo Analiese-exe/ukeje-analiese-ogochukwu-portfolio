@@ -1,7 +1,7 @@
 const tools = [
   { name: "Figma", image: "/lovable-uploads/2c86c3e5-2837-44e5-b5bc-7d1dc3c9969e.png" },
   { name: "Notion", image: "/lovable-uploads/98abe023-5937-47cc-bb4f-e613d705c5c9.png" },
-  { name: "Behance", image: "/lovable-uploads/ac9b66a3-9c5c-4464-b807-66085bf5b919.png" },
+  { name: "Adobe Illustrator", image: "/lovable-uploads/adobe-illustrator.png" },
   { name: "Cursor", image: "/lovable-uploads/521963ee-48e2-4117-8ac8-7ba832d56fd7.png" },
   { name: "Framer", image: "/lovable-uploads/a4292600-ffae-4527-9110-658b04fe0aeb.png" },
 ];
