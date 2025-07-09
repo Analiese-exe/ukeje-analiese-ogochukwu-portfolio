@@ -8,11 +8,11 @@ const Blog = () => {
       
       <main className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 fade-in">
-            <h1 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-              Blog
-            </h1>
-          </div>
+      <div className="text-center mb-16 fade-in">
+        <h1 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+          <span style={{opacity: 0.5}}>A few thoughts —</span> honest and human.
+        </h1>
+      </div>
 
           <div className="max-w-4xl mx-auto">
             <a 

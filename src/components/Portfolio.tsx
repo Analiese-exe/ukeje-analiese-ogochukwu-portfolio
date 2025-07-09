@@ -44,7 +44,7 @@ export const Portfolio = () => {
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   {project.title}
                 </h3>
-                <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
+                <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white bg-transparent hover:shadow-lg hover:shadow-white/30 transition-all duration-300">
                   View Behance Case Study
                 </Button>
               </div>

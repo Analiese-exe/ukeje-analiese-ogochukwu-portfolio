@@ -50,7 +50,7 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 fade-in">
             <h1 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-              All Projects
+              <span style={{opacity: 0.5}}>Some of my work —</span> thoughtfully designed.
             </h1>
           </div>
 
@@ -87,7 +87,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
+                  <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white bg-transparent hover:shadow-lg hover:shadow-white/30 transition-all duration-300">
                     View Behance Case Study
                   </Button>
                 </a>

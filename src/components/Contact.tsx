@@ -29,11 +29,8 @@ export const Contact = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-            Contact Me
+            <span style={{opacity: 0.5}}>Don't hesitate —</span> let's work together.
           </h2>
-          <p className="text-white/70 text-lg">
-            Let's build something impactful together.
-          </p>
         </div>
 
         {/* Contact Form and Details Side by Side */}
