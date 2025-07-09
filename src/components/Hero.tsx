@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Hello, I'm\nAnaliese,\na UX/UI Designer.";
+  const fullText = "Hello, I'm Analiese,\na UX/UI Designer.";
   
   useEffect(() => {
     let currentIndex = 0;
