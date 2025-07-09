@@ -9,32 +9,32 @@ export const Navigation = () => {
       <div className="flex items-center gap-6">
         <Link 
           to="/"
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-glow ${
-            location.pathname === '/' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'
+          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+            location.pathname === '/' ? 'shadow-lg shadow-white/30 bg-white/20' : 'bg-white/10 hover:bg-white/15'
           }`}
         >
           <Home className="w-5 h-5 text-white" />
         </Link>
         <Link 
           to="/projects"
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-glow ${
-            location.pathname === '/projects' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'
+          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+            location.pathname === '/projects' ? 'shadow-lg shadow-white/30 bg-white/20' : 'bg-white/10 hover:bg-white/15'
           }`}
         >
           <Briefcase className="w-5 h-5 text-white" />
         </Link>
         <Link 
           to="/blog"
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-glow ${
-            location.pathname === '/blog' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'
+          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+            location.pathname === '/blog' ? 'shadow-lg shadow-white/30 bg-white/20' : 'bg-white/10 hover:bg-white/15'
           }`}
         >
           <Pen className="w-5 h-5 text-white" />
         </Link>
         <Link 
           to="/contact"
-          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 cursor-glow ${
-            location.pathname === '/contact' ? 'bg-white/20' : 'bg-white/10 hover:bg-white/20'
+          className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
+            location.pathname === '/contact' ? 'shadow-lg shadow-white/30 bg-white/20' : 'bg-white/10 hover:bg-white/15'
           }`}
         >
           <Mail className="w-5 h-5 text-white" />

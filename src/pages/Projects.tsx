@@ -87,7 +87,7 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <Button className="btn-elevated px-6 py-3 rounded-lg font-medium">
+                  <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
                     View Behance Case Study
                   </Button>
                 </a>

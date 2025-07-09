@@ -5,38 +5,22 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Product Manager at TechCorp",
-    quote: "Analiese's design work transformed our user experience completely. Her attention to accessibility and user-centered approach is exceptional.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
+    quote: "Analiese's design work transformed our user experience completely. Her attention to accessibility and user-centered approach is exceptional."
   },
   {
     name: "Michael Chen",
     role: "Frontend Developer",
-    quote: "Working with Analiese was a pleasure. Her designs are not only beautiful but also practical and easy to implement.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
+    quote: "Working with Analiese was a pleasure. Her designs are not only beautiful but also practical and easy to implement."
   },
   {
     name: "Emily Rodriguez",
     role: "UX Researcher", 
-    quote: "Her understanding of user psychology and accessibility standards sets her apart. Analiese creates truly inclusive designs.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
+    quote: "Her understanding of user psychology and accessibility standards sets her apart. Analiese creates truly inclusive designs."
   },
   {
     name: "David Thompson",
     role: "Startup Founder",
-    quote: "Analiese helped us create a design system that scaled perfectly with our growth. Highly recommend her expertise.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
-  },
-  {
-    name: "Lisa Wang",
-    role: "Design Director",
-    quote: "Outstanding work ethic and creative problem-solving skills. Analiese consistently delivers innovative solutions.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
-  },
-  {
-    name: "James Miller",
-    role: "CEO at InnovateTech",
-    quote: "Her collaborative approach and attention to detail made our project a huge success. Truly professional.",
-    avatar: "/lovable-uploads/7d6950df-6866-4b58-9715-463dc4e3c7ec.png"
+    quote: "Analiese helped us create a design system that scaled perfectly with our growth. Highly recommend her expertise."
   }
 ];
 
@@ -88,44 +72,39 @@ export const Testimonials = () => {
         {/* Navigation arrows */}
         <button
           onClick={prevTestimonial}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors cursor-glow"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
         >
           <ChevronLeft className="w-6 h-6 text-white" />
         </button>
 
         <button
           onClick={nextTestimonial}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors cursor-glow"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
         >
           <ChevronRight className="w-6 h-6 text-white" />
         </button>
 
-        {/* Testimonials grid */}
-        <div className="mx-12">
-          <div className={`grid gap-8 ${isMobile ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'} transition-all duration-500`}>
-            {getVisibleTestimonials().map((testimonial, index) => (
-              <div
-                key={`${currentIndex}-${index}`}
-                className="bg-card p-8 rounded-2xl max-w-sm mx-auto w-full transition-all duration-500 hover:scale-105"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold text-sm">{testimonial.name}</div>
-                    <div className="text-white/60 text-xs">{testimonial.role}</div>
+        {/* Testimonials carousel */}
+        <div className="mx-12 overflow-hidden">
+          <div className="transition-transform duration-500 ease-out" style={{ transform: `translateX(-${currentIndex * (100 / (isMobile ? 1 : 4))}%)` }}>
+            <div className={`flex ${isMobile ? 'w-full' : 'w-[400%]'} gap-8`}>
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className={`${isMobile ? 'w-full' : 'w-1/4'} flex-shrink-0 transition-opacity duration-500`}
+                >
+                  <div className="bg-[#1A1A1A] p-8 rounded-2xl max-w-sm mx-auto w-full">
+                    <div className="mb-6">
+                      <div className="text-white font-semibold text-lg mb-2">{testimonial.name}</div>
+                      <div className="text-white/60 text-sm mb-4">{testimonial.role}</div>
+                    </div>
+                    <blockquote className="text-white/80 italic leading-relaxed">
+                      "{testimonial.quote}"
+                    </blockquote>
                   </div>
                 </div>
-                <blockquote className="text-white/80 italic leading-relaxed text-sm">
-                  "{testimonial.quote}"
-                </blockquote>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

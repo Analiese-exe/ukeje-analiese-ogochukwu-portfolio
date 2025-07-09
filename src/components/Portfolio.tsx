@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
-    title: "BUCC Crunch",
-    image: "🎓",
-  },
-  {
     title: "Career Genius",
-    image: "🧠",
+    image: "/lovable-uploads/10b4a112-507f-4a0f-8d51-e9508f317f90.png",
   },
   {
-    title: "AI Law Chatbot",
-    image: "⚖️",
+    title: "AI Legal Chatbot",
+    image: "/lovable-uploads/fe361b4c-75e8-4cae-ad2e-68c35aa30431.png",
+  },
+  {
+    title: "BUCC Crunch",
+    image: "/lovable-uploads/3732b2e1-8f8c-4f38-ab11-365c43ed268f.png",
   }
 ];
 
@@ -34,13 +34,17 @@ export const Portfolio = () => {
                 className="group fade-in text-center"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="card-modern h-96 w-full rounded-xl flex items-center justify-center text-8xl mb-6 cursor-pointer hover:scale-105 transition-all duration-300">
-                  <span>{project.image}</span>
+                <div className="h-96 w-full bg-white/5 rounded-2xl overflow-hidden mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   {project.title}
                 </h3>
-                <Button className="btn-elevated px-6 py-3 rounded-lg font-medium">
+                <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:shadow-lg hover:shadow-white/20">
                   View Behance Case Study
                 </Button>
               </div>
@@ -50,7 +54,7 @@ export const Portfolio = () => {
 
         <div className="text-center fade-in">
           <Link to="/projects">
-            <Button className="btn-outline px-8 py-3 rounded-lg font-medium">
+            <Button className="btn-elevated px-8 py-4 rounded-lg font-medium text-lg">
               View All Projects
             </Button>
           </Link>

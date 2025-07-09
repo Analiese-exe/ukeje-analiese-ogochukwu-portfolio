@@ -77,13 +77,13 @@ export const Experience = () => {
                 />
               </button>
               
-              {openIndex === index && (
-                <div className="px-6 pb-6 animate-accordion-down">
+              <div className={`overflow-hidden transition-all duration-500 ease-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="px-6 pb-6">
                   <p className="text-white/80 leading-relaxed">
                     {exp.description}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
