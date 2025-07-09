@@ -36,8 +36,8 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text Content */}
           <div className="text-center lg:text-left scroll-animate">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight mb-6">
-              <span className="inline-block min-w-fit">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight mb-6 max-w-2xl mx-auto lg:mx-0">
+              <span className="inline-block w-full">
                 {displayedText.split('\n').map((line, index) => (
                   <span key={index}>
                     {line}
