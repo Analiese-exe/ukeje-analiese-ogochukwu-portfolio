@@ -1,26 +1,26 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { SkillsMarquee } from "@/components/SkillsMarquee";
-import { About } from "@/components/About";
+import { Profile } from "@/components/Profile";
 import { Education } from "@/components/Education";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
-import { Projects } from "@/components/Projects";
+import { Portfolio } from "@/components/Portfolio";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground" style={{ backgroundColor: '#0D0D0D' }}>
       <Navigation />
       <Hero />
       <SkillsMarquee />
-      <About />
+      <Profile />
       <Education />
       <Skills />
       <Experience />
-      <Projects />
+      <Portfolio />
       <Testimonials />
       <Contact />
       <Footer />

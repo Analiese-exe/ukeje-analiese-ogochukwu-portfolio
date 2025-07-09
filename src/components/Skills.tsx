@@ -4,7 +4,6 @@ import {
   Layers, 
   Monitor, 
   Accessibility, 
-  Globe,
   TestTube,
   Layout,
   Smartphone
@@ -12,69 +11,81 @@ import {
 
 const skills = [
   { 
-    name: "User Interface Design (Web & Mobile)", 
+    name: "UI Design", 
+    percentage: 90,
     icon: Smartphone,
-    description: "Creating intuitive interfaces for web and mobile platforms"
   },
   { 
-    name: "User Experience Design", 
+    name: "UX Design", 
+    percentage: 85,
     icon: Users,
-    description: "Designing user-centered experiences that solve real problems"
   },
   { 
     name: "Wireframing & Prototyping", 
+    percentage: 97,
     icon: Layout,
-    description: "Building interactive prototypes and detailed wireframes"
   },
   { 
-    name: "Design Systems & Component Libraries", 
+    name: "Design Systems", 
+    percentage: 90,
     icon: Layers,
-    description: "Creating scalable design systems for consistent experiences"
   },
   { 
-    name: "Accessibility Design (WCAG, ARIA)", 
+    name: "Accessibility Design", 
+    percentage: 90,
     icon: Accessibility,
-    description: "Ensuring inclusive design for all users and abilities"
   },
   { 
-    name: "Responsive & Adaptive Design", 
+    name: "Responsive Design", 
+    percentage: 85,
     icon: Monitor,
-    description: "Crafting designs that work seamlessly across all devices"
   },
   { 
     name: "Interaction Design", 
+    percentage: 97,
     icon: Palette,
-    description: "Designing meaningful interactions and micro-animations"
   },
   { 
-    name: "Usability Testing & Feedback Integration", 
+    name: "Usability Testing", 
+    percentage: 90,
     icon: TestTube,
-    description: "Validating designs through user testing and iteration"
   },
 ];
 
 export const Skills = () => {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-            My Skills
+            Skills
           </h2>
           <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto fade-in">
+        <div className="space-y-8 fade-in">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group hoverable bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-6 transition-all duration-300 hover:border-white/20 hover:bg-black/60"
+              className="group"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-white/5">
-                <skill.icon className="w-6 h-6 text-white" />
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <skill.icon className="w-5 h-5 text-white" />
+                  <h3 className="text-white text-lg font-medium">{skill.name}</h3>
+                </div>
+                <span className="text-white/60 text-sm font-medium">{skill.percentage}%</span>
               </div>
-              <h3 className="text-white text-lg font-semibold mb-2">{skill.name}</h3>
-              <p className="text-white/70 text-sm">{skill.description}</p>
+              <div className="progress-bar h-2">
+                <div 
+                  className="progress-fill h-full transition-all duration-1000 ease-out"
+                  style={{ 
+                    width: `${skill.percentage}%`,
+                    transitionDelay: `${index * 0.1 + 0.5}s`
+                  }}
+                ></div>
+              </div>
             </div>
           ))}
         </div>

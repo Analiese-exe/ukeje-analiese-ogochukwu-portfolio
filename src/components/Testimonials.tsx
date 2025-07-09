@@ -1,97 +1,97 @@
-import { Star, Quote } from "lucide-react";
-import { useState, useEffect } from "react";
-
 const testimonials = [
   {
     name: "Sarah Johnson",
     role: "Product Manager at TechCorp",
-    avatar: "SJ",
-    quote: "Analiese's design work transformed our user experience completely. Her attention to accessibility and user-centered approach is exceptional.",
-    rating: 5
+    quote: "Analiese's design work transformed our user experience completely. Her attention to accessibility and user-centered approach is exceptional."
   },
   {
     name: "Michael Chen",
     role: "Frontend Developer",
-    avatar: "MC",
-    quote: "Working with Analiese was a pleasure. Her designs are not only beautiful but also practical and easy to implement.",
-    rating: 5
+    quote: "Working with Analiese was a pleasure. Her designs are not only beautiful but also practical and easy to implement."
   },
   {
     name: "Emily Rodriguez",
     role: "UX Researcher",
-    avatar: "ER",
-    quote: "Her understanding of user psychology and accessibility standards sets her apart. Analiese creates truly inclusive designs.",
-    rating: 5
+    quote: "Her understanding of user psychology and accessibility standards sets her apart. Analiese creates truly inclusive designs."
   },
   {
     name: "David Thompson",
     role: "Startup Founder",
-    avatar: "DT",
-    quote: "Analiese helped us create a design system that scaled perfectly with our growth. Highly recommend her expertise.",
-    rating: 5
+    quote: "Analiese helped us create a design system that scaled perfectly with our growth. Highly recommend her expertise."
+  },
+  {
+    name: "Lisa Wang",
+    role: "Design Director",
+    quote: "Outstanding work ethic and creative problem-solving skills. Analiese consistently delivers innovative solutions."
+  },
+  {
+    name: "James Miller",
+    role: "CEO at InnovateTech",
+    quote: "Her collaborative approach and attention to detail made our project a huge success. Truly professional."
   }
 ];
 
 export const Testimonials = () => {
-  const leftTestimonials = testimonials.slice(0, 2);
-  const rightTestimonials = testimonials.slice(2, 4);
+  const firstRow = testimonials.slice(0, 3);
+  const secondRow = testimonials.slice(3, 6);
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-            What People Say
-          </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
-        </div>
+    <section className="py-20 px-6 mx-auto max-w-5xl">
+      <div className="text-center mb-16 fade-in">
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+          Testimonials
+        </h2>
+        <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
+      </div>
 
-        <div className="hidden md:grid md:grid-cols-2 gap-8 h-96 fade-in">
-          {/* Left column - scrolling up */}
-          <div className="marquee-fade overflow-hidden">
-            <div className="vertical-marquee-up space-y-6">
-              {[...leftTestimonials, ...leftTestimonials, ...leftTestimonials].map((testimonial, index) => (
-                <div key={index} className="p-6">
-                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
+      {/* Desktop: Two rows of marquee */}
+      <div className="hidden md:block">
+        <div className="space-y-8">
+          {/* First row - moves right */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-8 animate-marquee-left">
+              {[...firstRow, ...firstRow, ...firstRow].map((testimonial, index) => (
+                <div key={index} className="card-modern min-w-80 p-6 flex-shrink-0">
+                  <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div className="text-white font-medium">{testimonial.name}</div>
-                  <div className="text-white/60 text-sm">{testimonial.role}</div>
+                  <div className="text-white font-medium text-sm">{testimonial.name}</div>
+                  <div className="text-white/60 text-xs">{testimonial.role}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right column - scrolling up */}
-          <div className="marquee-fade overflow-hidden">
-            <div className="vertical-marquee-up space-y-6" style={{ animationDelay: '-10s' }}>
-              {[...rightTestimonials, ...rightTestimonials, ...rightTestimonials].map((testimonial, index) => (
-                <div key={index} className="p-6">
-                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
+          {/* Second row - moves left */}
+          <div className="relative overflow-hidden">
+            <div className="flex gap-8 animate-marquee-right">
+              {[...secondRow, ...secondRow, ...secondRow].map((testimonial, index) => (
+                <div key={index} className="card-modern min-w-80 p-6 flex-shrink-0">
+                  <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
                     "{testimonial.quote}"
                   </blockquote>
-                  <div className="text-white font-medium">{testimonial.name}</div>
-                  <div className="text-white/60 text-sm">{testimonial.role}</div>
+                  <div className="text-white font-medium text-sm">{testimonial.name}</div>
+                  <div className="text-white/60 text-xs">{testimonial.role}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Mobile horizontal marquee */}
-        <div className="md:hidden fade-in">
-          <div className="horizontal-marquee-fade overflow-hidden">
-            <div className="horizontal-marquee flex gap-8">
-              {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <div key={index} className="flex-shrink-0 w-80 p-6">
-                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="text-white font-medium">{testimonial.name}</div>
-                  <div className="text-white/60 text-sm">{testimonial.role}</div>
-                </div>
-              ))}
-            </div>
+      {/* Mobile: Single horizontal marquee */}
+      <div className="md:hidden">
+        <div className="relative overflow-hidden">
+          <div className="flex gap-6 animate-marquee-left">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div key={index} className="card-modern min-w-72 p-6 flex-shrink-0">
+                <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
+                  "{testimonial.quote}"
+                </blockquote>
+                <div className="text-white font-medium text-sm">{testimonial.name}</div>
+                <div className="text-white/60 text-xs">{testimonial.role}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
