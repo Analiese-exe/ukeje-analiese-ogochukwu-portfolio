@@ -25,41 +25,28 @@ export const Education = () => {
           </h2>
         </div>
 
-        <div className="relative flex justify-center">
-          <div className="w-full max-w-2xl">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-0.5 top-0 bottom-0 w-0.5 bg-white/30"></div>
-
-            <div className="space-y-12">
-              {education.map((item, index) => (
-                <div key={index} className="relative flex flex-col items-center fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                  {/* Timeline dot with graduation icon */}
-                  <div className="flex-shrink-0 relative mb-6">
-                    <div className="timeline-dot w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border-2 border-white/30">
-                      <div className="text-white text-lg">🎓</div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="text-center">
-                    <div className="mb-2">
-                      <span className="text-white/60 text-sm font-medium">{item.period}</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-white mb-1">
-                      {item.degree}
-                    </h3>
-                    <h4 className="text-lg text-white/80 mb-1">
-                      {item.school}
-                    </h4>
-                    <p className="text-white/60 text-sm mb-3">{item.location}</p>
-                    <p className="text-white/70 leading-relaxed max-w-lg">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+        <div className="space-y-12 max-w-2xl mx-auto">
+          {education.map((item, index) => (
+            <div 
+              key={index} 
+              className="text-center fade-in" 
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className="mb-2">
+                <span className="text-white/60 text-lg font-medium">{item.period}</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-white mb-2">
+                {item.degree}
+              </h3>
+              <h4 className="text-xl text-white/80 mb-1">
+                {item.school}
+              </h4>
+              <p className="text-white/60 mb-4">{item.location}</p>
+              <p className="text-white/70 leading-relaxed">
+                {item.description}
+              </p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

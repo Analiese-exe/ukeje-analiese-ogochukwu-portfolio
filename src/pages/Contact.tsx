@@ -7,7 +7,7 @@ const Contact = () => {
     <div className="min-h-screen text-foreground" style={{ backgroundColor: '#0D0D0D' }}>
       <Navigation />
       
-      <main className="pt-24">
+      <main className="pt-32">
         <ContactSection />
       </main>
 

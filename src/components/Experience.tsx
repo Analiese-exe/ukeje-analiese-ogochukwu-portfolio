@@ -24,14 +24,14 @@ const experiences = [
     description: "Optimized interfaces with audience research. Conducted usability testing with design iteration loops. Designed responsive mobile-first experiences."
   },
   {
-    title: "Product Designer",
+    title: "Lead Product Designer",
     company: "BUCC Dev Team",
     location: "Babcock University",
     period: "University Project",
     description: "Led design for internal university platforms. Collaborated with development team. Improved student engagement through better UX design."
   },
   {
-    title: "Product Designer",
+    title: "Product Design Co-Lead",
     company: "Google Developer Groups Babcock",
     location: "Lagos, Nigeria",
     period: "Community Role",

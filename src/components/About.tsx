@@ -16,11 +16,7 @@ export const About = () => {
             
             <div className="space-y-6 text-lg text-white/70 leading-relaxed">
               <p>
-                I'm Analiese, a UX/UI Designer focused on creating intuitive, inclusive digital experiences. I design clean, accessible interfaces for web and mobile — with special care for neurodiverse users and underrepresented groups.
-              </p>
-              
-              <p>
-                From study tools to data dashboards, I combine usability, clarity, and visual simplicity to make digital products that feel good to use. I care about design that works — for everyone.
+                I'm Analiese, a UX/UI Designer focused on intuitive, inclusive digital experiences. I design clean, accessible interfaces with a special focus on neurodiverse users and clarity-driven products. I care about making digital spaces usable for everyone.
               </p>
             </div>
 
@@ -38,13 +34,6 @@ export const About = () => {
                   <Mail className="w-5 h-5 text-white" />
                 </div>
                 <span>ao.ukeje@gmail.com</span>
-              </div>
-              
-              <div className="flex items-center gap-4 text-white/70 hover:text-white transition-colors">
-                <div className="w-10 h-10 border border-white/20 rounded-lg flex items-center justify-center">
-                  <Globe className="w-5 h-5 text-white" />
-                </div>
-                <span>www.ukejeanaliese.com</span>
               </div>
             </div>
           </div>

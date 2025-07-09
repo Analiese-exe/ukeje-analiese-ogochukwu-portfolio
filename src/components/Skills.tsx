@@ -51,19 +51,19 @@ export const Skills = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="card-modern p-6 rounded-xl"
+              className="p-8 rounded-xl bg-transparent hover:bg-white/5 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-center">
-                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-4">
-                  <skill.icon className="w-6 h-6 text-white" />
+                <div className="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-6">
+                  <skill.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{skill.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3">{skill.name}</h3>
+                <p className="text-white/70 leading-relaxed">{skill.description}</p>
               </div>
             </div>
           ))}
