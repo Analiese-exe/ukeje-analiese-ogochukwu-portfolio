@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "William",
     role: "BUCC Collaborator",
-    quote: "I have had the opportunity to collaborate with Analiese Ukeje on several development projects during my time at BUCC as the lead developer. As the Lead Product Designer, she consistently demonstrated strong design capabilities and effective cross-functional teamwork. Analiese approaches projects with a thorough understanding of both user experience principles."
+    quote: "Analiese consistently brought clarity, solid UX judgment, and a collaborative mindset to every project we worked on at BUCC. She's reliable and detail-oriented."
   }
 ];
 
@@ -57,30 +57,16 @@ export const Testimonials = () => {
 
       <div className="relative">
         {isMobile ? (
-          // Mobile: Horizontal carousel with arrows
+          // Mobile: Horizontal carousel with arrows below
           <>
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
-
-            <div className="mx-14 overflow-hidden">
+            <div className="overflow-hidden mb-8">
               <div 
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-[#1A1A1A] p-6 rounded-2xl w-full max-h-80">
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div className="bg-[#1A1A1A] p-6 rounded-2xl w-full max-h-80 mx-auto">
                       <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                         "{testimonial.quote}"
                       </blockquote>
@@ -92,23 +78,46 @@ export const Testimonials = () => {
               </div>
             </div>
 
-            <div className="flex justify-center mt-8 gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-white' : 'bg-white/30'
-                  }`}
-                />
-              ))}
+            <div className="flex justify-center items-center gap-6">
+              <button
+                onClick={prevTestimonial}
+                className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
+              >
+                <ChevronLeft className="w-6 h-6 text-white" />
+              </button>
+
+              <div className="flex gap-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentIndex ? 'bg-white' : 'bg-white/30'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextTestimonial}
+                className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
+              >
+                <ChevronRight className="w-6 h-6 text-white" />
+              </button>
             </div>
           </>
         ) : (
           // Desktop/Tablet: Rotating layout (center + sides)
           <div className="flex items-center justify-center gap-8 min-h-[300px]">
             {/* Left card */}
-            <div className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out">
+            <div 
+              key={`left-${currentIndex}`}
+              className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out transform"
+              style={{ 
+                transform: 'scale(0.9) translateX(0)',
+                opacity: 0.7
+              }}
+            >
               <div className="bg-[#1A1A1A] p-6 rounded-2xl max-h-72">
                 <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                   "{testimonials[(currentIndex + 2) % testimonials.length].quote}"
@@ -119,7 +128,14 @@ export const Testimonials = () => {
             </div>
 
             {/* Center card (main) */}
-            <div className="w-96 scale-100 transition-all duration-700 ease-in-out">
+            <div 
+              key={`center-${currentIndex}`}
+              className="w-96 transition-all duration-700 ease-in-out transform"
+              style={{ 
+                transform: 'scale(1) translateX(0)',
+                opacity: 1
+              }}
+            >
               <div className="bg-[#1A1A1A] p-8 rounded-2xl max-h-80">
                 <blockquote className="text-white/80 italic leading-relaxed mb-6 overflow-hidden">
                   "{testimonials[currentIndex].quote}"
@@ -130,7 +146,14 @@ export const Testimonials = () => {
             </div>
 
             {/* Right card */}
-            <div className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out">
+            <div 
+              key={`right-${currentIndex}`}
+              className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out transform"
+              style={{ 
+                transform: 'scale(0.9) translateX(0)',
+                opacity: 0.7
+              }}
+            >
               <div className="bg-[#1A1A1A] p-6 rounded-2xl max-h-72">
                 <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                   "{testimonials[(currentIndex + 1) % testimonials.length].quote}"

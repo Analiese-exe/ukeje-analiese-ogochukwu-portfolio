@@ -54,11 +54,11 @@ const Projects = () => {
             </h1>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 fade-in max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 fade-in max-w-6xl mx-auto justify-items-center">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group text-center"
+                className="group text-center w-full max-w-sm"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Project image */}
@@ -66,7 +66,7 @@ const Projects = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="max-w-full max-h-full object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
 

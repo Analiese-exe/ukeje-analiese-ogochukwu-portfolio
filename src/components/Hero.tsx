@@ -37,13 +37,15 @@ export const Hero = () => {
           {/* Left: Text Content */}
           <div className="text-center lg:text-left scroll-animate">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight mb-6">
-              {displayedText.split('\n').map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index < displayedText.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-              {showCursor && <span className="animate-pulse">|</span>}
+              <span className="inline-block min-w-fit">
+                {displayedText.split('\n').map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index < displayedText.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
+                <span className={`animate-pulse ${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
+              </span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-8">
