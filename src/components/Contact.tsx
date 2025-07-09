@@ -31,16 +31,16 @@ export const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
             Contact Me
           </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
           <p className="text-white/70 text-lg">
             Let's build something impactful together.
           </p>
         </div>
 
-        {/* Contact Form */}
-        <div className="card-modern p-8 rounded-xl mb-16 fade-in">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-4">
+        {/* Contact Form and Details Side by Side */}
+        <div className="grid md:grid-cols-2 gap-12 fade-in">
+          {/* Contact Form */}
+          <div className="card-modern p-8 rounded-xl">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-white">
                   Name*
@@ -55,6 +55,7 @@ export const Contact = () => {
                   required
                 />
               </div>
+              
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
                   Email*
@@ -70,59 +71,62 @@ export const Contact = () => {
                   required
                 />
               </div>
-            </div>
 
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium mb-2 text-white">
-                Subject
-              </label>
-              <Input
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-lg focus:border-white/40"
-                placeholder="Project inquiry"
-              />
-            </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2 text-white">
+                  Subject
+                </label>
+                <Input
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-lg focus:border-white/40"
+                  placeholder="Project inquiry"
+                />
+              </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={5}
-                className="bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-lg focus:border-white/40 resize-none"
-                placeholder="Tell me about your project..."
-                required
-              />
-            </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-white">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  className="bg-white/5 border-white/20 text-white placeholder:text-white/50 rounded-lg focus:border-white/40 resize-none"
+                  placeholder="Tell me about your project..."
+                  required
+                />
+              </div>
 
-            <Button 
-              type="submit" 
-              className="btn-elevated w-full py-3 rounded-lg font-medium"
-            >
-              <Send className="w-5 h-5 mr-2" />
-              Submit
-            </Button>
-          </form>
-        </div>
-
-        {/* Contact Details */}
-        <div className="text-center space-y-4 fade-in">
-          <div>
-            <h3 className="text-2xl font-semibold text-white mb-2">Ukeje Analiese</h3>
-            <p className="text-white/70 mb-4">UI/UX Designer</p>
+              <Button 
+                type="submit" 
+                className="btn-elevated w-full py-3 rounded-lg font-medium"
+              >
+                <Send className="w-5 h-5 mr-2" />
+                Send Message
+              </Button>
+            </form>
           </div>
-          
-          <div className="space-y-2 text-white/80">
-            <p>Phone: 07030108384</p>
-            <p>Email: ao.ukeje@gmail.com</p>
-            <p>Website: www.analiese.com</p>
+
+          {/* Contact Details */}
+          <div className="flex flex-col justify-center text-center md:text-left space-y-6">
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-2">Ukeje Analiese</h3>
+              <p className="text-white/70 mb-6">UI/UX Designer</p>
+            </div>
+            
+            <div className="space-y-4 text-white/80">
+              <p className="flex items-center justify-center md:justify-start gap-2">
+                <span>📞</span> Phone: 07030108384
+              </p>
+              <p className="flex items-center justify-center md:justify-start gap-2">
+                <span>📧</span> Email: ao.ukeje@gmail.com
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -4,51 +4,40 @@ import {
   Layers, 
   Monitor, 
   Accessibility, 
-  TestTube,
   Layout,
   Smartphone
 } from "lucide-react";
 
 const skills = [
   { 
-    name: "UI Design", 
-    percentage: 90,
+    name: "User Interface Design (Web & Mobile)", 
     icon: Smartphone,
+    description: "Creating intuitive and visually appealing interfaces for web and mobile applications"
   },
   { 
-    name: "UX Design", 
-    percentage: 85,
+    name: "User Experience Design", 
     icon: Users,
+    description: "Designing user-centered experiences through research and iterative design"
   },
   { 
     name: "Wireframing & Prototyping", 
-    percentage: 97,
     icon: Layout,
+    description: "Creating low and high-fidelity prototypes to validate design concepts"
   },
   { 
-    name: "Design Systems", 
-    percentage: 90,
+    name: "Design Systems & Component Libraries", 
     icon: Layers,
+    description: "Building scalable design systems and reusable component libraries"
   },
   { 
-    name: "Accessibility Design", 
-    percentage: 90,
+    name: "Accessibility Design (WCAG, ARIA)", 
     icon: Accessibility,
+    description: "Ensuring digital products are accessible to users with diverse abilities"
   },
   { 
-    name: "Responsive Design", 
-    percentage: 85,
+    name: "Responsive & Adaptive Design", 
     icon: Monitor,
-  },
-  { 
-    name: "Interaction Design", 
-    percentage: 97,
-    icon: Palette,
-  },
-  { 
-    name: "Usability Testing", 
-    percentage: 90,
-    icon: TestTube,
+    description: "Creating designs that work seamlessly across all devices and screen sizes"
   },
 ];
 
@@ -60,31 +49,21 @@ export const Skills = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
             Skills
           </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="space-y-8 fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group"
+              className="card-modern p-6 rounded-xl"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <skill.icon className="w-5 h-5 text-white" />
-                  <h3 className="text-white text-lg font-medium">{skill.name}</h3>
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-4">
+                  <skill.icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-white/60 text-sm font-medium">{skill.percentage}%</span>
-              </div>
-              <div className="progress-bar h-2">
-                <div 
-                  className="progress-fill h-full transition-all duration-1000 ease-out"
-                  style={{ 
-                    width: `${skill.percentage}%`,
-                    transitionDelay: `${index * 0.1 + 0.5}s`
-                  }}
-                ></div>
+                <h3 className="text-lg font-semibold text-white mb-2">{skill.name}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{skill.description}</p>
               </div>
             </div>
           ))}

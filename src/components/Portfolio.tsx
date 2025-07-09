@@ -16,10 +16,6 @@ const projects = [
   {
     title: "AI Law Chatbot",
     image: "⚖️",
-  },
-  {
-    title: "Community Health Manual",
-    image: "🏥",
   }
 ];
 
@@ -31,7 +27,6 @@ export const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
             Portfolio
           </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

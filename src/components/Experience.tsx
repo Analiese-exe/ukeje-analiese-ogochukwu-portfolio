@@ -50,10 +50,9 @@ export const Experience = () => {
     <section id="experience" className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
-            Experience
-          </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
+        <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
+          Experience
+        </h2>
         </div>
 
         <div className="space-y-4">

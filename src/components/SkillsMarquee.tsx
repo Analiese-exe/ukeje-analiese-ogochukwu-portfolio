@@ -9,14 +9,18 @@ const tools = [
 export const SkillsMarquee = () => {
   return (
     <section className="py-16 overflow-hidden">
-      <div className="relative">
+      <div className="relative max-w-[60%] mx-auto">
+        {/* Fade masks */}
+        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+        
         {/* Horizontal marquee */}
         <div className="marquee-container">
           <div className="flex gap-16 marquee-track">
             {[...tools, ...tools].map((tool, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 group hoverable"
+                className="flex-shrink-0 group"
               >
                 <div className="w-16 h-16 flex items-center justify-center transition-all duration-300 hover:scale-110">
                   <img 

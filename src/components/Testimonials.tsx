@@ -41,17 +41,16 @@ export const Testimonials = () => {
         <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
           Testimonials
         </h2>
-        <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
       </div>
 
-      {/* Desktop: Two rows of marquee */}
+      {/* Desktop: Two columns of vertical marquee */}
       <div className="hidden md:block">
-        <div className="space-y-8">
-          {/* First row - moves right */}
-          <div className="relative overflow-hidden">
-            <div className="flex gap-8 animate-marquee-left">
+        <div className="flex gap-8 justify-center">
+          {/* First column - moves up */}
+          <div className="relative overflow-hidden h-96 marquee-fade">
+            <div className="flex flex-col gap-8 animate-marquee-up">
               {[...firstRow, ...firstRow, ...firstRow].map((testimonial, index) => (
-                <div key={index} className="card-modern min-w-80 p-6 flex-shrink-0">
+                <div key={index} className="card-modern w-72 max-w-[300px] p-6 flex-shrink-0">
                   <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
                     "{testimonial.quote}"
                   </blockquote>
@@ -62,11 +61,11 @@ export const Testimonials = () => {
             </div>
           </div>
 
-          {/* Second row - moves left */}
-          <div className="relative overflow-hidden">
-            <div className="flex gap-8 animate-marquee-right">
+          {/* Second column - moves down */}
+          <div className="relative overflow-hidden h-96 marquee-fade">
+            <div className="flex flex-col gap-8 animate-marquee-down">
               {[...secondRow, ...secondRow, ...secondRow].map((testimonial, index) => (
-                <div key={index} className="card-modern min-w-80 p-6 flex-shrink-0">
+                <div key={index} className="card-modern w-72 max-w-[300px] p-6 flex-shrink-0">
                   <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
                     "{testimonial.quote}"
                   </blockquote>

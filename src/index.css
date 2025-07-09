@@ -257,3 +257,11 @@ All colors MUST be HSL.
 .animate-marquee-right {
   animation: marquee-right 30s linear infinite;
 }
+
+.animate-marquee-up {
+  animation: marquee-vertical-up 30s linear infinite;
+}
+
+.animate-marquee-down {
+  animation: marquee-vertical-down 30s linear infinite;
+}

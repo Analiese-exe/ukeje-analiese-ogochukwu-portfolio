@@ -23,7 +23,6 @@ export const Education = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-white">
             Education
           </h2>
-          <div className="w-16 h-1 bg-white rounded-full mx-auto"></div>
         </div>
 
         <div className="relative">
