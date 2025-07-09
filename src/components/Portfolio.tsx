@@ -34,17 +34,17 @@ export const Portfolio = () => {
                 className="group fade-in text-center"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="h-96 w-full bg-white/5 rounded-2xl overflow-hidden mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10">
+                <div className="aspect-square w-full bg-white/5 rounded-2xl overflow-hidden mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10 flex items-center justify-center p-4">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   {project.title}
                 </h3>
-                <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-white text-white bg-transparent hover:shadow-lg hover:shadow-white/30 transition-all duration-300">
+                <Button variant="outline" className="px-6 py-3 rounded-lg font-medium border-2 border-white text-white bg-transparent hover:shadow-lg hover:shadow-white/30 hover:bg-white/10 transition-all duration-300">
                   View Behance Case Study
                 </Button>
               </div>

@@ -61,31 +61,31 @@ export const Testimonials = () => {
           <>
             <button
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
             </button>
 
             <button
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:shadow-lg hover:shadow-white/30 transition-all duration-300"
             >
               <ChevronRight className="w-6 h-6 text-white" />
             </button>
 
-            <div className="mx-12 overflow-hidden">
+            <div className="mx-14 overflow-hidden">
               <div 
                 className="flex transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
               >
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <div className="bg-[#1A1A1A] p-8 rounded-2xl max-w-sm mx-auto">
-                      <blockquote className="text-white/80 italic leading-relaxed mb-6">
+                  <div key={index} className="w-full flex-shrink-0 px-2">
+                    <div className="bg-[#1A1A1A] p-6 rounded-2xl w-full max-h-80">
+                      <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                         "{testimonial.quote}"
                       </blockquote>
-                      <div className="text-white font-semibold text-lg">{testimonial.name}</div>
-                      <div className="text-white/60 text-sm">{testimonial.role}</div>
+                      <div className="text-white font-semibold text-base">{testimonial.name}</div>
+                      <div className="text-white/60 text-xs">{testimonial.role}</div>
                     </div>
                   </div>
                 ))}
@@ -106,11 +106,11 @@ export const Testimonials = () => {
           </>
         ) : (
           // Desktop/Tablet: Rotating layout (center + sides)
-          <div className="flex items-center justify-center gap-8">
+          <div className="flex items-center justify-center gap-8 min-h-[300px]">
             {/* Left card */}
             <div className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out">
-              <div className="bg-[#1A1A1A] p-6 rounded-2xl">
-                <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
+              <div className="bg-[#1A1A1A] p-6 rounded-2xl max-h-72">
+                <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                   "{testimonials[(currentIndex + 2) % testimonials.length].quote}"
                 </blockquote>
                 <div className="text-white font-semibold text-base">{testimonials[(currentIndex + 2) % testimonials.length].name}</div>
@@ -120,8 +120,8 @@ export const Testimonials = () => {
 
             {/* Center card (main) */}
             <div className="w-96 scale-100 transition-all duration-700 ease-in-out">
-              <div className="bg-[#1A1A1A] p-8 rounded-2xl">
-                <blockquote className="text-white/80 italic leading-relaxed mb-6">
+              <div className="bg-[#1A1A1A] p-8 rounded-2xl max-h-80">
+                <blockquote className="text-white/80 italic leading-relaxed mb-6 overflow-hidden">
                   "{testimonials[currentIndex].quote}"
                 </blockquote>
                 <div className="text-white font-semibold text-lg">{testimonials[currentIndex].name}</div>
@@ -131,8 +131,8 @@ export const Testimonials = () => {
 
             {/* Right card */}
             <div className="w-80 opacity-70 scale-90 transition-all duration-700 ease-in-out">
-              <div className="bg-[#1A1A1A] p-6 rounded-2xl">
-                <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm">
+              <div className="bg-[#1A1A1A] p-6 rounded-2xl max-h-72">
+                <blockquote className="text-white/80 italic leading-relaxed mb-4 text-sm overflow-hidden">
                   "{testimonials[(currentIndex + 1) % testimonials.length].quote}"
                 </blockquote>
                 <div className="text-white font-semibold text-base">{testimonials[(currentIndex + 1) % testimonials.length].name}</div>
