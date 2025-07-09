@@ -16,6 +16,7 @@ const buttonVariants = cva(
         ghost: "bg-transparent text-foreground hover:bg-white/5",
         link: "text-foreground underline-offset-4 hover:underline",
         minimal: "minimal-button",
+        elevated: "elevated-button",
       },
       size: {
         default: "h-10 px-4 py-2",

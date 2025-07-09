@@ -108,7 +108,7 @@ export const Contact = () => {
 
             <Button 
               type="submit" 
-              variant="minimal" 
+              variant="elevated" 
               size="lg" 
               className="w-full hoverable"
             >

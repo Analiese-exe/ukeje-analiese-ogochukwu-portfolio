@@ -36,13 +36,12 @@ export const Hero = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 fade-in">
-          <Button variant="minimal" size="xl" className="w-full sm:w-auto hoverable">
+          <Button variant="outline" size="xl" className="w-full sm:w-auto hoverable">
+            Work with me
+          </Button>
+          <Button variant="elevated" size="xl" className="w-full sm:w-auto hoverable">
             <Download className="w-5 h-5" />
             Download Resume
-          </Button>
-          <Button variant="outline" size="xl" className="w-full sm:w-auto hoverable">
-            <Eye className="w-5 h-5" />
-            View Projects
           </Button>
         </div>
       </div>

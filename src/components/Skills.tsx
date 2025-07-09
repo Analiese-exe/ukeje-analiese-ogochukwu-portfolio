@@ -5,18 +5,52 @@ import {
   Monitor, 
   Accessibility, 
   Globe,
-  TestTube
+  TestTube,
+  Layout,
+  Smartphone
 } from "lucide-react";
 
 const skills = [
-  { name: "Figma", icon: Palette },
-  { name: "Framer", icon: Layers },
-  { name: "Webflow", icon: Globe },
-  { name: "Adobe Illustrator", icon: Palette },
-  { name: "ChatGPT", icon: Users },
-  { name: "Notion", icon: Monitor },
-  { name: "HTML", icon: TestTube },
-  { name: "JavaScript", icon: TestTube },
+  { 
+    name: "User Interface Design (Web & Mobile)", 
+    icon: Smartphone,
+    description: "Creating intuitive interfaces for web and mobile platforms"
+  },
+  { 
+    name: "User Experience Design", 
+    icon: Users,
+    description: "Designing user-centered experiences that solve real problems"
+  },
+  { 
+    name: "Wireframing & Prototyping", 
+    icon: Layout,
+    description: "Building interactive prototypes and detailed wireframes"
+  },
+  { 
+    name: "Design Systems & Component Libraries", 
+    icon: Layers,
+    description: "Creating scalable design systems for consistent experiences"
+  },
+  { 
+    name: "Accessibility Design (WCAG, ARIA)", 
+    icon: Accessibility,
+    description: "Ensuring inclusive design for all users and abilities"
+  },
+  { 
+    name: "Responsive & Adaptive Design", 
+    icon: Monitor,
+    description: "Crafting designs that work seamlessly across all devices"
+  },
+  { 
+    name: "Interaction Design", 
+    icon: Palette,
+    description: "Designing meaningful interactions and micro-animations"
+  },
+  { 
+    name: "Usability Testing & Feedback Integration", 
+    icon: TestTube,
+    description: "Validating designs through user testing and iteration"
+  },
 ];
 
 export const Skills = () => {
@@ -30,16 +64,17 @@ export const Skills = () => {
           <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto fade-in">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group hoverable text-center"
+              className="group hoverable bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-6 transition-all duration-300 hover:border-white/20 hover:bg-black/60"
             >
-              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center transition-all duration-300 hover:scale-110">
-                <skill.icon className="w-8 h-8 text-white" />
+              <div className="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-white/5">
+                <skill.icon className="w-6 h-6 text-white" />
               </div>
-              <p className="text-white text-sm font-medium">{skill.name}</p>
+              <h3 className="text-white text-lg font-semibold mb-2">{skill.name}</h3>
+              <p className="text-white/70 text-sm">{skill.description}</p>
             </div>
           ))}
         </div>
