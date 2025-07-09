@@ -15,8 +15,8 @@ const skills = [
   { name: "Adobe Illustrator", icon: Palette },
   { name: "ChatGPT", icon: Users },
   { name: "Notion", icon: Monitor },
-  { name: "HTML/CSS", icon: TestTube },
-  { name: "Accessibility", icon: Accessibility },
+  { name: "HTML", icon: TestTube },
+  { name: "JavaScript", icon: TestTube },
 ];
 
 export const Skills = () => {
@@ -30,15 +30,16 @@ export const Skills = () => {
           <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 fade-in">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto fade-in">
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="group hoverable"
+              className="group hoverable text-center"
             >
-              <div className="w-20 h-20 rounded-full border border-white/20 flex items-center justify-center transition-all duration-300 hover:border-white/50 minimal-card">
-                <skill.icon className="w-8 h-8 text-white group-hover:scale-110 transition-transform" />
+              <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center transition-all duration-300 hover:scale-110">
+                <skill.icon className="w-8 h-8 text-white" />
               </div>
+              <p className="text-white text-sm font-medium">{skill.name}</p>
             </div>
           ))}
         </div>

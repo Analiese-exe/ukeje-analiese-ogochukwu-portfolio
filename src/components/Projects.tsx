@@ -51,19 +51,19 @@ export const Projects = () => {
           <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 fade-in">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group hover:scale-105 transition-all duration-300 hoverable"
+              className="group hoverable"
             >
               {/* Project image */}
-              <div className="h-64 bg-white/5 rounded-2xl flex items-center justify-center text-6xl relative overflow-hidden mb-4 minimal-card">
+              <div className="h-64 bg-white/5 rounded-2xl flex items-center justify-center text-6xl relative overflow-hidden mb-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10">
                 <span className="relative z-10">{project.image}</span>
               </div>
 
               {/* Project title */}
-              <h3 className="text-xl font-semibold text-white text-center">
+              <h3 className="text-xl font-medium text-white text-center">
                 {project.title}
               </h3>
             </div>

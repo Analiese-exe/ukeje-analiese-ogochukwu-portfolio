@@ -8,8 +8,8 @@ export const Hero = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Avatar with minimal glow */}
         <div className="mb-8 inline-block relative fade-in">
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-white/20 p-1 float">
-            <div className="w-full h-full rounded-full bg-transparent border border-white/10 flex items-center justify-center text-4xl md:text-5xl font-semibold text-white">
+          <div className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full border border-white/20 p-1 float mx-auto">
+            <div className="w-full h-full rounded-full bg-transparent border border-white/10 flex items-center justify-center text-4xl md:text-5xl lg:text-6xl font-medium text-white">
               A
             </div>
           </div>
@@ -17,11 +17,11 @@ export const Hero = () => {
 
         {/* Name and title */}
         <div className="space-y-4 mb-8 fade-in">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white">
             Hello, I'm{" "}
             <span className="text-white">Analiese</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl text-white/70 font-light">
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-white/70 font-light">
             a UX/UI Designer.
           </h2>
         </div>
@@ -47,11 +47,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center fade-in">
-        <p className="text-sm text-white/60 mb-2">Discover My Work</p>
-        <ChevronDown className="w-6 h-6 mx-auto text-white animate-bounce" />
-      </div>
     </section>
   );
 };

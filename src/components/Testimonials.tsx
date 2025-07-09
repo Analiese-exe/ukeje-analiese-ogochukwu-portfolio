@@ -46,12 +46,12 @@ export const Testimonials = () => {
           <div className="w-16 h-1 bg-white rounded-full mx-auto mb-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 h-96 fade-in">
+        <div className="hidden md:grid md:grid-cols-2 gap-8 h-96 fade-in">
           {/* Left column - scrolling up */}
           <div className="marquee-fade overflow-hidden">
             <div className="vertical-marquee-up space-y-6">
-              {[...leftTestimonials, ...leftTestimonials].map((testimonial, index) => (
-                <div key={index} className="bg-white/5 p-6 rounded-xl">
+              {[...leftTestimonials, ...leftTestimonials, ...leftTestimonials].map((testimonial, index) => (
+                <div key={index} className="p-6">
                   <blockquote className="text-white/80 leading-relaxed mb-4 italic">
                     "{testimonial.quote}"
                   </blockquote>
@@ -62,11 +62,28 @@ export const Testimonials = () => {
             </div>
           </div>
 
-          {/* Right column - scrolling down */}
+          {/* Right column - scrolling up */}
           <div className="marquee-fade overflow-hidden">
-            <div className="vertical-marquee-down space-y-6">
-              {[...rightTestimonials, ...rightTestimonials].map((testimonial, index) => (
-                <div key={index} className="bg-white/5 p-6 rounded-xl">
+            <div className="vertical-marquee-up space-y-6" style={{ animationDelay: '-10s' }}>
+              {[...rightTestimonials, ...rightTestimonials, ...rightTestimonials].map((testimonial, index) => (
+                <div key={index} className="p-6">
+                  <blockquote className="text-white/80 leading-relaxed mb-4 italic">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div className="text-white font-medium">{testimonial.name}</div>
+                  <div className="text-white/60 text-sm">{testimonial.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile horizontal marquee */}
+        <div className="md:hidden fade-in">
+          <div className="horizontal-marquee-fade overflow-hidden">
+            <div className="horizontal-marquee flex gap-8">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={index} className="flex-shrink-0 w-80 p-6">
                   <blockquote className="text-white/80 leading-relaxed mb-4 italic">
                     "{testimonial.quote}"
                   </blockquote>

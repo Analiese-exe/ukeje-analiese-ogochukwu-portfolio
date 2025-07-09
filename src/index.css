@@ -74,9 +74,9 @@ All colors MUST be HSL.
   }
   
   .custom-cursor.hover {
-    @apply scale-125;
-    box-shadow: 0 0 25px hsl(0 0% 100% / 0.8);
-    animation: cursor-pulse 1s ease-in-out infinite;
+    @apply scale-150;
+    box-shadow: 0 0 20px hsl(0 0% 100% / 0.6);
+    animation: cursor-pulse 1.5s ease-in-out infinite;
   }
   
   /* Minimal clean styles */
@@ -94,13 +94,14 @@ All colors MUST be HSL.
   /* Clean button */
   .minimal-button {
     background: transparent;
-    border: 1px solid hsl(0 0% 100%);
+    border: none;
     color: hsl(0 0% 100%);
     transition: var(--transition-elegant);
+    filter: drop-shadow(0 4px 12px hsl(0 0% 100% / 0.4));
   }
   
   .minimal-button:hover {
-    box-shadow: 0 0 10px hsl(0 0% 100% / 0.3);
+    filter: drop-shadow(0 6px 16px hsl(0 0% 100% / 0.6));
   }
   
   /* Floating animation */
@@ -108,13 +109,19 @@ All colors MUST be HSL.
     animation: float 6s ease-in-out infinite;
   }
   
-  /* Static marquee */
-  .static-marquee {
-    transition: transform 0.3s ease;
+  /* Marquee container */
+  .marquee-container {
+    overflow: hidden;
+    width: 100%;
   }
   
-  .static-marquee:hover {
-    transform: translateX(-10px);
+  .marquee-track {
+    animation: marquee-horizontal 20s linear infinite;
+    will-change: transform;
+  }
+  
+  .marquee-track:hover {
+    animation-play-state: paused;
   }
   
   /* Fade in animation */
@@ -126,17 +133,27 @@ All colors MUST be HSL.
   
   /* Vertical marquee */
   .vertical-marquee-up {
-    animation: marquee-vertical-up 20s linear infinite;
+    animation: marquee-vertical-up 30s linear infinite;
   }
   
   .vertical-marquee-down {
-    animation: marquee-vertical-down 20s linear infinite;
+    animation: marquee-vertical-down 30s linear infinite;
+  }
+  
+  /* Horizontal marquee */
+  .horizontal-marquee {
+    animation: marquee-horizontal 25s linear infinite;
   }
   
   /* Marquee fade masks */
   .marquee-fade {
     mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
     -webkit-mask: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  }
+  
+  .horizontal-marquee-fade {
+    mask: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+    -webkit-mask: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
   }
 }
 
@@ -184,4 +201,9 @@ All colors MUST be HSL.
 @keyframes marquee-vertical-down {
   from { transform: translateY(-100%); }
   to { transform: translateY(100%); }
+}
+
+@keyframes marquee-horizontal {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
