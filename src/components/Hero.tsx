@@ -54,9 +54,18 @@ export const Hero = () => {
               <span className="text-white font-medium">inclusive digital experiences</span>
             </p>
 
-            <Button className="btn-elevated px-8 py-4 rounded-lg font-medium text-lg">
-              <Download className="w-5 h-5 mr-2" />
-              Download Resume
+            <Button 
+              asChild 
+              className="btn-elevated px-8 py-4 rounded-lg font-medium text-lg"
+            >
+              <a 
+                href="https://drive.google.com/file/d/1-DC41xoDn-OSJiC0A2PAa_Gz0Zw5TaCh/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </a>
             </Button>
           </div>
 
