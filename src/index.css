@@ -172,7 +172,7 @@ All colors MUST be HSL.
   }
   
   .marquee-track {
-    animation: marquee-horizontal 12s linear infinite;
+    animation: marquee-horizontal 4s linear infinite;
     will-change: transform;
   }
   
